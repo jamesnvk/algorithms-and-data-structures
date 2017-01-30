@@ -4,6 +4,7 @@ function Stack(capacity) {
   this.count = 0
 }
 
+// Time complexity: O(1)
 Stack.prototype.push = function(value) {
   if(this.count < this.capacity) {
     this.storage[this.count++] = value
@@ -12,21 +13,21 @@ Stack.prototype.push = function(value) {
     return "Max capacity reached for stack"
   }
 }
-// Time complexity:
 
+// Time complexity: O(1)
 Stack.prototype.pop = function() {
   var value = this.storage[--this.count]
   delete this.storage[this.count]
   if(this.count < 0) this.count = 0;
   return value
 }
-// Time complexity:
 
+// Time complexity: O(1)
 Stack.prototype.peek = function() {
   return this.storage[this.count-1]
 }
-// Time complexity:
 
+// Time complexity: O(1)
 Stack.prototype.count = function() {
   return this.count
 }
