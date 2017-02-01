@@ -31,3 +31,12 @@ Stack.prototype.peek = function() {
 Stack.prototype.count = function() {
   return this.count
 }
+
+Stack.prototype.contains = function(value){
+  for(let key in this.storage){
+    if(this.storage[key] === value){
+      return true;
+    }
+  }
+  return false;
+}
