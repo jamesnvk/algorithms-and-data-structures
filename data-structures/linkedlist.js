@@ -24,3 +24,13 @@ LinkedList.prototype.print = function() {
   })
   return result.join(', ')
 }
+
+LinkedList.prototype.insertAfter = function(node, value) {
+  var oldNext = node.next
+  var newNext = new Node(value)
+  node.next = newNext
+  newNext.next = oldNext
+
+  if (this.tail === node) this.tail = newNext;
+  return newNext
+}
