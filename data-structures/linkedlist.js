@@ -34,3 +34,20 @@ LinkedList.prototype.insertAfter = function(node, value) {
   if (this.tail === node) this.tail = newNext;
   return newNext
 }
+
+LinkedList.prototype.removeAfter = function(node) {
+  var removed = node.next
+  if (!node.next) console.log('Nothing to remove');
+  var newNext = removed.next
+  node.next = newNext
+  removed.next = null
+  if (removed === this.tail) this.tail = node;
+  return removed
+}
+
+LinkedList.prototype.insertHead = function(value) {
+  var oldHead = this.head
+  this.head = new Node(value)
+  this.head.next = oldHead
+  return this.head
+}
