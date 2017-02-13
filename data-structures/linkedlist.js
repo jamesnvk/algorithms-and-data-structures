@@ -51,3 +51,29 @@ LinkedList.prototype.insertHead = function(value) {
   this.head.next = oldHead
   return this.head
 }
+
+LinkedList.prototype.removeHead = function() {
+  var oldHead = this.head
+  var newHead = oldHead.next
+  this.head = newHead
+  oldHead.next = null
+  return oldHead
+}
+
+LinkedList.prototype.findNode = function(value) {
+  var node = this.head
+  while (node) {
+    if (node.value === value) return node;
+    node = node.next
+  }
+  return 'No node with value: ' + value + ' found.'
+}
+
+
+LinkedList.prototype.appendToTail = function(value) {
+  var newTail = new Node(value)
+  this.tail.next = newTail
+  this.tail = newTail
+  return newTail
+}
+
