@@ -15,3 +15,10 @@ BinarySearchTree.prototype.insert = function(value) {
   }
   return this
 }
+
+BinarySearchTree.prototype.contains = function(value) {
+  if(this.value === value) return true;
+  if(value < this.value) return !!this.left && this.left.contains(value)
+  if(value > this.value) return !!this.right && this.right.contains(value)
+    return false;
+}
