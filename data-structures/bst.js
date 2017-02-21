@@ -22,3 +22,10 @@ BinarySearchTree.prototype.contains = function(value) {
   if(value > this.value) return !!this.right && this.right.contains(value)
     return false;
 }
+
+BinarySearchTree.prototype.traverseDepthFirstInOrder = function(fn) {
+  if(!this.left && !this.right) return fn(this);
+  if(this.left) this.left.traverseDepthFirstInOrder(fn);
+  fn(this)
+  if(this.right) this.right.traverseDepthFirstInOrder(fn);
+}
