@@ -35,3 +35,9 @@ BinarySearchTree.prototype.traverseDepthFirstPreOrder = function(fn) {
   if(this.left) this.left.traverseDepthFirstPreOrder(fn);
   if(this.right) this.right.traverseDepthFirstPreOrder(fn);
 }
+
+BinarySearchTree.prototype.traverseDepthFirstPostOrder = function(fn) {
+  if(this.left) this.left.traverseDepthFirstPostOrder(fn);
+  if(this.right) this.right.traverseDepthFirstPostOrder(fn);
+  fn(this)
+}
