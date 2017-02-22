@@ -41,3 +41,11 @@ BinarySearchTree.prototype.traverseDepthFirstPostOrder = function(fn) {
   if(this.right) this.right.traverseDepthFirstPostOrder(fn);
   fn(this)
 }
+
+BinarySearchTree.prototype.findMin = function() {
+  var node = this
+  while(node.left !== null){
+    node = node.left
+  }
+  return node
+}
