@@ -22,3 +22,7 @@ Graph.prototype.addEdge = function(value1, value2) {
     return "Invalid node value"
   }
 }
+
+Graph.prototype.contains = function(value) {
+  return this.nodes[value] ? true : false
+}
