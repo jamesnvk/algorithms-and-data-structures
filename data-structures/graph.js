@@ -28,16 +28,7 @@ Graph.prototype.contains = function(value) {
 }
 
 Graph.prototype.hasEdge = function(value1, value2) {
-   if(this.nodes[value1] && this.nodes[value2]) {
-      var arr1 = this.nodes[value1]
-      var arr2 = this.nodes[value2]
-      for(let i = 0; i < arr1.length; i++){
-        if(arr1[i] === value2){
-          for(let j = 0; j < arr2.length; j++){
-            if(arr2[j] === value1) return true;
-          }
-        }
-      }
-   }
-   return false;
+  return this.nodes[value1].indexOf(value2) > -1;
 }
+
+
