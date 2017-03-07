@@ -16,3 +16,10 @@ Tree.prototype.contains = function(value) {
   }
   return false
 }
+
+Tree.prototype.traverseDepthFirst = function(fn) {
+  this.children.forEach(function(child){
+    child.traverseDepthFirst(fn)
+  })
+  fn(this)
+}
