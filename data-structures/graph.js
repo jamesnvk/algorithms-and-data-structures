@@ -31,4 +31,15 @@ Graph.prototype.hasEdge = function(value1, value2) {
   return this.nodes[value1].indexOf(value2) > -1;
 }
 
+Graph.prototype.traverseDepthFirst = function(value, fn, visited, distance) {
+  visited = visisted || {}
+  distance = distance || 0
+  fn(value)
+  visited[value] = true;
+
+  this.nodes[value].forEach(function(neighbor){
+    if(visited[neighbor]) return;
+    this.traverseDepthFirst(neighbor, fn, visited, distance+1)
+  }, this)
+}
 
