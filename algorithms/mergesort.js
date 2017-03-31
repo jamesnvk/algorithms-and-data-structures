@@ -6,4 +6,8 @@ function mergeSort(arr) {
   var left = arr.slice(0, mid)
   var right = arr.slice(mid)
 
+  var leftSorted = mergeSort(left)
+  var rightSorted = mergeSort(right)
+
+  return merge(leftSorted, rightSorted)
 }
