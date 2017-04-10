@@ -27,3 +27,7 @@ Set.prototype.remove = function(value) {
     return value + ' removed, capacity is ' + this.count + '/' + this.capacity
   }
 }
+
+Set.prototype.space = function() {
+  return 'Capacity is ' + this.count + '/' + this.capacity
+}
