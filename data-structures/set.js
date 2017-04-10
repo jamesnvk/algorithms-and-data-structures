@@ -17,3 +17,13 @@ Set.prototype.add = function(value) {
 
   return 'Max capacity reached.'
 }
+
+Set.prototype.remove = function(value) {
+  if(!this.storage[value]){
+    return 'Value does not exist'
+  } else {
+    delete this.storage[value]
+    this.count--
+    return value + ' removed, capacity is ' + this.count + '/' + this.capacity
+  }
+}
