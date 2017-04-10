@@ -9,5 +9,11 @@ function Set(capacity) {
 Set.prototype.add = function(value) {
   if(this.storage[value]){
     return 'Value already exists in set'
+  } else if(this.count < this.capacity){
+    this.storage[value] = true
+    this.count++
+    return value + ' added, capacity is ' + this.count + '/' + this.capacity
   }
+
+  return 'Max capacity reached.'
 }
